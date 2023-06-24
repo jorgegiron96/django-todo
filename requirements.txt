@@ -4,7 +4,6 @@ db==0.1.1
 Django==4.2.2
 psycopg2==2.9.6
 psycopg2-binary==2.9.6
-pyscopg2==66.0.2
 sqlparse==0.4.4
 typing_extensions==4.6.3
 tzdata==2023.3
