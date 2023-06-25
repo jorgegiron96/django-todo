@@ -6,7 +6,9 @@
           "name": "django",
           "version": "4.2.2" 
         }
-      },
+      }, 
+
+      
 
 
       {
@@ -30,7 +32,9 @@
       {
         "src": "/(.*)",
         "dest": "projectname/wsgi.py"
-      }
+      },
+
+      { "rewrites": [{ "source": "/(.*)", "destination": "/" }] }
     ]
   }
 
