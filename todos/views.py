@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from .models import Todo
-from django.http import HttpResponseRedirect
+from django.db.models import BooleanField, Case, When
 
 class IndexView(generic.ListView):
     template_name = 'todos/index.html'
@@ -9,7 +9,11 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         """Return all the latest todos."""
-        return Todo.objects.order_by('-created_at')
+        return Todo.objects.order_by('isCompleted', '-created_at')
+    
+    
+    
+
 
 def add(request):
     title = request.POST['title']
