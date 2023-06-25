@@ -24,8 +24,5 @@
       "src": "/(.*)",
       "dest": "todoApp/wsgi.py"
     }
-  ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
   ]
 }
