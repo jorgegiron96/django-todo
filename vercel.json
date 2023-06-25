@@ -1,41 +1,36 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "framework": {
-          "name": "django",
-          "version": "4.2.2" 
-        }
-      }, 
-
-      
-
-
-      {
-        "src": "projectname/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-      },
-      {
-        "src": "build_files.sh",
-        "use": "@vercel/static-build",
-        "config": {
-          "distDir": "staticfiles_build"
-        }
+  "version": 2,
+  "builds": [
+    {
+      "framework": {
+        "name": "django",
+        "version": "4.2.2"
       }
-    ],
-    "routes": [
-      {
-        "src": "/static/(.*)",
-        "dest": "/static/$1"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "projectname/wsgi.py"
-      },
-
-      { "rewrites": [{ "source": "/(.*)", "destination": "/" }] }
-    ]
-  }
-
-  
+    },
+    {
+      "src": "todoApp/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+    },
+    {
+      "src": "build_files.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles_build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "todoApp/wsgi.py"
+    }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
