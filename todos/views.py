@@ -1,12 +1,7 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, redirect
 from django.views import generic
 from .models import Todo
-from django.views.decorators.cache import cache_page
-from django.utils.decorators import method_decorator
-from django.views.generic import ListView
 
-
-@method_decorator(cache_page(60), name='dispatch')
 class IndexView(generic.ListView):
     template_name = 'todos/index.html'
     context_object_name = 'todo_list'
@@ -15,9 +10,6 @@ class IndexView(generic.ListView):
         """Return all the latest todos."""
         return Todo.objects.order_by('isCompleted', '-created_at')
     
-
-
-
 def add(request):
     title = request.POST['title']
     Todo.objects.create(title=title)
