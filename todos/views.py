@@ -5,6 +5,7 @@ from .models import Todo
 class IndexView(generic.ListView):
     template_name = 'todos/index.html'
     context_object_name = 'todo_list'
+    paginate_by = 10
 
     def get_queryset(self):
         """Return all the latest todos."""
