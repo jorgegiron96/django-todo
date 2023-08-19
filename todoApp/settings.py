@@ -12,9 +12,7 @@ SECRET_KEY = '8)810zj@#^2xp=1=2rkozbv8#)gub6m1a^9qf&)d-9&x9*c2a_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','vercel.app','.vercel.app','.now.sh', '.railway.app']
-
-
+ALLOWED_HOSTS = ['127.0.0.1','.repl.co']
 
 # Application definition
 
