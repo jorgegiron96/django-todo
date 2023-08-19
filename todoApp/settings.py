@@ -15,6 +15,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1','vercel.app','.vercel.app','.now.sh', '.railway.app']
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -62,23 +63,23 @@ WSGI_APPLICATION = 'todoApp.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
-}
-
-DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'bIUCyBSsaGIT1QXNBpKy',
-        'HOST': 'containers-us-west-54.railway.app',
-        'PORT': '6650',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         #'ENGINE': 'django.db.backends.sqlite3',
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'bIUCyBSsaGIT1QXNBpKy',
+#         'HOST': 'containers-us-west-54.railway.app',
+#         'PORT': '6650',
+#     }
+# }
 
 
 # Password validation
